@@ -30,11 +30,31 @@ async def add_channels(clbck: CallbackQuery, state: FSMContext):
 
 @router.message(BotStates.adding_channels)
 async def set_channels(msg: Message, state: FSMContext):
-    #database = get_database()
-    print(msg.text)
-    print(msg.forward_from_chat.title)
-    #if msg.sender_chat.type == "channel":
-    #    database.add_channel(msg.sender_chat.id, msg.sender_chat.full_name)
-    #else:
-    #    await msg.answer('Сообщение переслано не из канала. Пожалуйста, повторите попытку.')
+    database = get_database()
+    try:
+        if msg.forward_origin.type == "channel":
+            possible_exception = database.add_channel(msg.forward_origin.chat.id, msg.forward_origin.chat.title)
+            if not possible_exception:
+                await msg.answer(f"Канал {msg.forward_origin.chat.title} добавлен. "
+                                 f"Добавьте еще, либо нажмите кнопку завершить.", reply_markup=kb.add_channels_menu)
+            elif possible_exception == "IntegrityError":
+                await msg.answer(text.error_duplicate, reply_markup=kb.add_channels_menu)
+            else:
+                await msg.answer(text.error_general, reply_markup=kb.add_channels_menu)
+        else:
+            await msg.answer('Сообщение переслано не из канала. Пожалуйста, повторите попытку.')
+    except Exception:
+        await msg.answer(text.error_general, reply_markup=kb.add_channels_menu)
 
+
+@router.callback_query(F.data == "complete_adding_channels")
+async def complete_adding_channels(clbck: CallbackQuery, state: FSMContext):
+    await clbck.bot.send_message(clbck.message.chat.id, "Добавление завершено.", reply_markup=kb.menu)
+    await state.clear()
+
+
+@router.message(Command("channels"))
+async def get_channels_list(msg: Message):
+    database = get_database()
+    channels_list = database.get_channels()
+    await msg.answer(text=channels_list, reply_markup=kb.menu)

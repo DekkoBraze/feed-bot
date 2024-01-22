@@ -6,6 +6,6 @@ menu = [
 menu = InlineKeyboardMarkup(inline_keyboard=menu)
 
 add_channels_menu = [
-    [InlineKeyboardButton(text="Завершить добавление", callback_data="get_feed")]
+    [InlineKeyboardButton(text="Завершить добавление", callback_data="complete_adding_channels")]
 ]
 add_channels_menu = InlineKeyboardMarkup(inline_keyboard=add_channels_menu)

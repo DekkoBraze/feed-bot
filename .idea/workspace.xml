@@ -4,23 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26ec89c2-0f5c-491b-8563-18d3891f03d5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/feed-bot.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aiogram_old/channel_handler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aiogram_old/handlers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aiogram_old/kb.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aiogram_old/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/aiogram_old/text.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/poetry.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/anon.session" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyproject.toml" afterDir="false" />
+    <list default="true" id="26ec89c2-0f5c-491b-8563-18d3891f03d5" name="Changes" comment="Base architecture">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiogram_bot/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/aiogram_bot/handlers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiogram_bot/kb.py" beforeDir="false" afterPath="$PROJECT_DIR$/aiogram_bot/kb.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/aiogram_bot/text.py" beforeDir="false" afterPath="$PROJECT_DIR$/aiogram_bot/text.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql.py" beforeDir="false" afterPath="$PROJECT_DIR$/sql.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +26,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2bDEt7WzXLR9cRLB1dHySat2cJl" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -48,19 +37,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Python.channel_handler.executor": "Run",
-    "Python.handlers.executor": "Run",
-    "Python.history_app.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.text.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Python.channel_handler.executor&quot;: &quot;Run&quot;,
+    &quot;Python.handlers.executor&quot;: &quot;Run&quot;,
+    &quot;Python.history_app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.text.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/user_data" />
+      <recent name="$PROJECT_DIR$/aiogram_bot" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -77,9 +73,20 @@
       <option name="presentableId" value="Default" />
       <updated>1705741460488</updated>
     </task>
+    <task id="LOCAL-00001" summary="Base architecture">
+      <option name="closed" value="true" />
+      <created>1705863071707</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1705863071707</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Base architecture" />
+    <option name="LAST_COMMIT_MESSAGE" value="Base architecture" />
   </component>
 </project>
