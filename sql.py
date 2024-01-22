@@ -20,7 +20,7 @@ class Database:
         except sqlite3.IntegrityError:
             return "IntegrityError"
         except Exception as e:
-            print(e)
+            print(type(e))
             return "UnknownError"
         return None
 
