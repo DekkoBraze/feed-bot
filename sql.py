@@ -25,7 +25,7 @@ class Database:
         return None
 
     def get_channels(self):
-        self.cursor.execute(f"""SELECT channel_name
+        self.cursor.execute(f"""SELECT *
                     FROM channels
                     """)
         return self.cursor.fetchall()
