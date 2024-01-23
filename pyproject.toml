@@ -8,9 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 aiogram = "^3.3.0"
-telebot = "^0.0.5"
 telethon = "^1.33.1"
-psycopg2-binary = "^2.9.9"
 
 
 [build-system]

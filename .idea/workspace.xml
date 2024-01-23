@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="26ec89c2-0f5c-491b-8563-18d3891f03d5" name="Changes" comment="Userbot registration; autoforwarding from user">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aiogram_bot/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/aiogram_bot/handlers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aiogram_bot/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/aiogram_bot/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/telephon_bot/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/telephon_bot/main.py" afterDir="false" />
-    </list>
+    <list default="true" id="26ec89c2-0f5c-491b-8563-18d3891f03d5" name="Changes" comment="Main functions complete" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -104,7 +99,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706009775621</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Main functions complete">
+      <option name="closed" value="true" />
+      <created>1706027006220</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1706027006220</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -113,6 +116,7 @@
     <MESSAGE value="Adding channels and handling exceptions" />
     <MESSAGE value="Handling mediagroups" />
     <MESSAGE value="Userbot registration; autoforwarding from user" />
-    <option name="LAST_COMMIT_MESSAGE" value="Userbot registration; autoforwarding from user" />
+    <MESSAGE value="Main functions complete" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main functions complete" />
   </component>
 </project>
