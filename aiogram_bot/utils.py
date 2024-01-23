@@ -19,12 +19,13 @@ def get_bot_token():
     return bot_token
 
 
-def get_user_id():
+def get_users_id():
     config = configparser.ConfigParser()
     config.read(os.path.join(path_to_user_data, 'config.ini'))
     user_id = config['aiogram']['user_id']
+    telephon_user_id = config['aiogram']['second_user_id']
 
-    return user_id
+    return user_id, telephon_user_id
 
 #@router.channel_post()
 #async def cp_handler(post: types.Message):

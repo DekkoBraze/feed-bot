@@ -5,9 +5,9 @@ import kb
 import text
 from states import BotStates
 from aiogram.fsm.context import FSMContext
-from utils import get_database, get_user_id
+from utils import get_database, get_users_id
 from aiogram.types.callback_query import CallbackQuery
-from telephon_bot.main import get_hash_code, register_userbot, is_authorized, start_feeding, join_channels, start_feeding_loop
+from telephon_bot.main import get_hash_code, register_userbot, is_authorized, start_feeding, join_channels, start_feeding_loop, stop_feeding_loop
 
 router = Router()
 media_group_ids = set()
@@ -97,7 +97,9 @@ async def get_phone(msg: Message, state: FSMContext):
 
 @router.message(BotStates.asking_code)
 async def get_code(msg: Message, state: FSMContext):
-    is_telephon_started = await register_userbot(phone_num, msg.text, code_hash)
+    code = int(msg.text)
+    code += 1
+    is_telephon_started = await register_userbot(phone_num, code, code_hash)
     if is_telephon_started:
         await msg.answer("Вы успешно зарегистрировались!")
         await state.clear()
@@ -115,11 +117,13 @@ async def get_feed(clbck: CallbackQuery, state: FSMContext):
 @router.message(Command('exit'), BotStates.feeding)
 async def get_feed(msg: Message, state: FSMContext):
     await state.clear()
+    await stop_feeding_loop()
     await msg.answer("Лента остановлена!", reply_markup=kb.menu)
 
 
 @router.message(BotStates.feeding)
 async def forward_messages(msg: Message, state: FSMContext):
-    print('feeding_in_proccess')
-    user_id = get_user_id()
-    await msg.forward(user_id)
+    user_id, telephon_user_id = get_users_id()
+    if msg.chat.id == int(telephon_user_id):
+        print('feeding_in_proccess')
+        await msg.forward(user_id)

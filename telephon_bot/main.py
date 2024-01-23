@@ -1,11 +1,6 @@
-from telethon import TelegramClient, events, types
-import configparser
-import json
-from telephon_bot.utils import get_login_data, get_bot_id
-import asyncio
-from utils import get_database, get_user_id
+from telethon import TelegramClient, events
+from telephon_bot.utils import get_login_data, get_bot_id, get_database
 from telethon.tl.functions.channels import JoinChannelRequest
-from telethon.tl.types import PeerUser, PeerChat, PeerChannel
 
 username, api_id, api_hash = get_login_data()
 client = TelegramClient(username, api_id, api_hash)
@@ -13,8 +8,6 @@ client = TelegramClient(username, api_id, api_hash)
 
 async def register_userbot(phone, code, phone_code_hash):
     try:
-        username, api_id, api_hash = get_login_data()
-        client = TelegramClient(username, api_id, api_hash)
         await client.connect()
         await client.sign_in(phone, code, phone_code_hash=phone_code_hash)
         return True
@@ -24,8 +17,6 @@ async def register_userbot(phone, code, phone_code_hash):
 
 
 async def get_hash_code(phone):
-    username, api_id, api_hash = get_login_data()
-    client = TelegramClient(username, api_id, api_hash)
     await client.connect()
     if not await client.is_user_authorized():
         phone_code_hash = await client.send_code_request(phone)
@@ -35,8 +26,6 @@ async def get_hash_code(phone):
 
 
 async def is_authorized():
-    username, api_id, api_hash = get_login_data()
-    client = TelegramClient(username, api_id, api_hash)
     await client.connect()
     if await client.is_user_authorized():
         return True
@@ -45,8 +34,6 @@ async def is_authorized():
 
 
 async def join_channels():
-    username, api_id, api_hash = get_login_data()
-    client = TelegramClient(username, api_id, api_hash)
     await client.connect()
     database = get_database()
     channels_lst = database.get_channels()
@@ -63,19 +50,19 @@ async def start_feeding(event):
     database = get_database()
     channels_lst = database.get_channels()
     bot_id = get_bot_id()
-    user_id = get_user_id()
     sender = await event.get_sender()
-    if event.chat_id == 486857274:
-        print(event.message)
-        await client.forward_messages(int(user_id), event.message, sender)
-    #for channel in channels_lst:
-    #    if channel[1] == event.chat_id:
-    #        await client.forward_messages(int(bot_id), event.message)
+    for channel in channels_lst:
+        if event.chat_id == int(channel[1]):
+            await client.forward_messages(int(bot_id), event.message, sender)
 
 
 async def start_feeding_loop():
     await client.connect()
     await client.run_until_disconnected()
+
+
+async def stop_feeding_loop():
+    await client.disconnect()
 
 #@client.on(events.NewMessage(-1001916777851))
 #async def main(event):
