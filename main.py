@@ -14,7 +14,7 @@ telephon_user_id = int(config['telephon']['telephon_user_id'])
 
 database = Database('feed_bot.db')
 
-client = TelegramClient(username, api_id, api_hash)
+client = TelegramClient(username, api_id, api_hash, system_version="4.16.30-vxCUSTOM_STRING")
 
 last_media_group_id = ''
 
