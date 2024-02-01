@@ -1,4 +1,4 @@
-FeedBot will help you organize many separate channels into a single beautiful feed.
+FeedBot is a Telegram bot that will help you organize many separate channels into a single beautiful feed.
 
 > **To use this bot, you need to have two Telegram accounts (and two phone numbers, properly).**
 
